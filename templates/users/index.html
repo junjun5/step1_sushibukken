@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<h1>Index</h1>
+<a href="{{ url_for('users_create') }}">新規作成</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>ユーザー名</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- ループで一覧表示する。各データの編集・詳細画面のリンクも出力 -->
+        {% for user in users %}
+        <tr>
+            <td>
+                {{ user.username }}
+            </td>
+            <td>
+                <a href="{{ url_for('users_edit', id=user.id) }}">編集</a>
+                <a href="{{ url_for('users_details', id=user.id) }}">詳細</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

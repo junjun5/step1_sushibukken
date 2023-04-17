@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Bukken Index</title>
+<h1>Bukken Data</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>物件</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- ループで一覧表示する。各データの編集・詳細画面のリンクも出力 -->
+        {% for bukken in bukkens %}
+        <tr>
+            <td>{{ bukken.name }}</td>
+            <td>{{ bukken.address }}</td>
+            <td>{{ bukken.floornum }}</td>
+            <td>{{ bukken.area }} m2</td>
+            <td><a href="{{ bukken.URL }}">物件のリンク</a></td>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

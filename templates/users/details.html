@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<h1>Details</h1>
+
+<!-- reprで定義したヤツが表示できたりもします -->
+<h2>{{ "{}".format(user) }}</h2>
+
+<form action="{{ url_for('users_delete_post') }}" method="post">
+    <input type="hidden" name="id" value="{{ user.id }}" />
+    <input type="submit" value="削除" class="btn btn-danger" /> |
+    <a href="{{ url_for('users_index') }}">一覧へ戻る</a>
+</form>

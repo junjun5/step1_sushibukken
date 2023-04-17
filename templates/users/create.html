@@ -1,0 +1,13 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<h1>Create</h1>
+
+<form action="{{ url_for('users_create_post') }}" method="post">
+    <div class="form-group">
+        <label for="InputTitle">ユーザー名</label>
+        <input type="text" class="form-control" name="username" />
+    </div>
+    <input type="submit" value="作成" class="btn btn-primary" />
+</form>
+
+<a href="{{ url_for('users_index') }}">一覧へ戻る</a>

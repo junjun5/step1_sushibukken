@@ -1,0 +1,22 @@
+<!doctype html>
+<title>Sushi Restaurant</title>
+<h1>Restaurant Data</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>寿司屋</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- ループで一覧表示する。各データの編集・詳細画面のリンクも出力 -->
+        {% for restaurant in restaurants %}
+        <tr>
+            <td>{{ restaurant.name }}</td>
+            <td><a href="{{ restaurant.urls_pc }}">お店のリンク</a></td>
+            <td><img src="{{ restaurant.photo_pc_m}}"></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
